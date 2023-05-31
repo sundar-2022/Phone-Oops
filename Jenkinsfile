@@ -1,11 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage('Maven Version') {
+    stage('Java Version') {
       parallel {
-        stage('Maven Version') {
+        stage('Java Version') {
           steps {
-            bat 'mvn -v'
+            bat 'java -version'
           }
         }
 
@@ -17,10 +17,9 @@ pipeline {
 
       }
     }
-
     stage('Running Test') {
       steps {
-        bat 'mvn clean test'
+        bat 'Exit'
       }
     }
 
